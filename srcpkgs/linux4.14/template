@@ -1,7 +1,7 @@
 # Template file for 'linux4.14'
 pkgname=linux4.14
 version=4.14.38
-revision=2
+revision=3
 _patchver=-ck1-tgsk
 patch_args="-Np1"
 wrksrc="linux-${version}"
