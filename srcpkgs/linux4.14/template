@@ -74,7 +74,7 @@ do_configure() {
 		make ${makejobs} ARCH=$arch ${_args} allmodconfig
 	fi
 	# Always use our revision to CONFIG_LOCALVERSION to match our pkg version.
-	sed -i -e "s|^\(CONFIG_LOCALVERSION=\).*|\1\"_${revision}\"|" .config
+	sed -i -e 's|^CONFIG_LOCALVERSION="\(.*\)"|CONFIG_LOCALVERSION="\1_'${revision}'"|' .config
 }
 do_build() {
 	local arch _cross _args
@@ -88,12 +88,9 @@ do_build() {
 	if [ "$CROSS_BUILD" ]; then
 		_cross="CROSS_COMPILE=${XBPS_CROSS_TRIPLET}-"
 	fi
-	if [ "${_patchver}" ]; then
-		_version="EXTRAVERSION=${_patchver}"
-	fi
 	export LDFLAGS=
-	make ARCH=$arch ${_version} ${_cross} ${makejobs} prepare
-	make ARCH=$arch ${_version} ${_cross} ${makejobs} ${_args}
+	make ARCH=$arch ${_cross} ${makejobs} prepare
+	make ARCH=$arch ${_cross} ${makejobs} ${_args}
 }
 do_install() {
 	local arch subarch _args hdrdest
