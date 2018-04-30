@@ -92,6 +92,9 @@ do_build() {
 	export LDFLAGS=
 	make ARCH=$arch ${_cross} ${makejobs} prepare
 	make ARCH=$arch ${_cross} ${makejobs} ${_args}
+
+	# Remove temporary build files to avoid out-of-disk-space errors later on.
+	rm -rf .tmp_*
 }
 do_install() {
 	local arch subarch _args hdrdest
@@ -211,8 +214,8 @@ do_install() {
 	# add dvb headers for external modules
 	mkdir -p ${hdrdest}/drivers/media/dvb-core
 	cp drivers/media/dvb-core/*.h ${hdrdest}/drivers/media/dvb-core/
-	mkdir -p ${hdrdest}/include/config/dvb/
-	cp include/config/dvb/*.h ${hdrdest}/include/config/dvb/
+	#mkdir -p ${hdrdest}/include/config/dvb/
+	#cp include/config/dvb/*.h ${hdrdest}/include/config/dvb/
 
 	# add dvb headers for http://mcentral.de/hg/~mrec/em28xx-new
 	mkdir -p ${hdrdest}/drivers/media/dvb-frontends
