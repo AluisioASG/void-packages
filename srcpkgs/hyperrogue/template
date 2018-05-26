@@ -1,0 +1,29 @@
+# Template file for 'hyperrogue'
+pkgname=hyperrogue
+version=10.0g
+revision=4
+wrksrc="hyperrogue${version/.}-src"
+build_style=gnu-makefile
+make_build_args='CPPFLAGS+=-DHYPERPATH=\"/usr/share/hyperrogue/\" CPPFLAGS+=-I/usr/include/SDL'
+hostmakedepends="unzip"
+makedepends="SDL-devel SDL_gfx-devel SDL_mixer-devel SDL_ttf-devel"
+depends="dejavu-fonts-ttf"
+short_desc="Roguelike game on non-Euclidean space"
+maintainer="Aluísio Augusto Silva Gonçalves <aluisio@aasg.name>"
+license="GPL-2.0-or-later"
+homepage="http://www.roguetemple.com/z/hyper/"
+distfiles="http://www.roguetemple.com/z/hyper/hyperrogue100g-src.tgz
+ http://www.roguetemple.com/z/hyper/hyperrogue100g-win.zip"
+checksum="c0b3286eda1bee9a77bad296986aca6a1133dcb0938554613380d0a72dbbc838
+ 4bdd71130fd8f35107ee81a91458a72e6d0adf9da649193e95bdd28dcf01d72e"
+
+do_install() {
+	vbin hyper hyperrogue
+	vinstall hyperrogue-music.txt 0644 usr/share/hyperrogue
+	vmkdir usr/share/hyperrogue/sounds
+	vcopy "${wrksrc%-src}/*.ogg" usr/share/hyperrogue
+	vcopy "${wrksrc%-src}/sounds/*" usr/share/hyperrogue/sounds
+	ln -s /usr/share/fonts/TTF/DejaVuSans-Bold.ttf "${DESTDIR}/usr/share/hyperrogue/DejaVuSans-Bold.ttf"
+	vinstall "${FILESDIR}/hyperrogue-192.png" 0644 usr/share/icons/hicolor/192x192/apps
+	vinstall "${FILESDIR}/hyperrogue.desktop" 0644 usr/share/applications
+}

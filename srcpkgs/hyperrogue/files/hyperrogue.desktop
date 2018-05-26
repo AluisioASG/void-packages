@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=HyperRogue
+Comment=Non-Euclidian roguelike game
+Exec=hyperrogue
+Icon=hyperrogue
+Terminal=false
+StartupNotify=false
+Categories=Application;Game;
