@@ -1,0 +1,36 @@
+# Template file for 'OpenRCT2'
+pkgname=OpenRCT2
+_objects_version="1.0.6"
+_titles_version="0.1.2"
+version="0.2.1"
+revision=1
+#only_for_archs="i686 x86_64"
+build_style=cmake
+configure_args="$(vopt_if multiplayer "" "-DDISABLE_HTTP_TWITCH=1 -DDISABLE_NETWORK=1")"
+hostmakedepends="pkg-config unzip"
+makedepends="SDL2-devel fontconfig-devel freetype-devel libzip-devel
+ libpng-devel speexdsp-devel jansson-devel icu-devel zlib-devel
+ $(vopt_if multiplayer libcurl-devel) $(vopt_if multiplayer libressl-devel)"
+depends="libGL"
+short_desc="Open source re-implementation of RollerCoaster Tycoon 2"
+maintainer="Aluísio Augusto Silva Gonçalves <aluisio@aasg.name>"
+license="GPL-3.0-or-later"
+homepage="https://openrct2.io"
+distfiles="https://github.com/OpenRCT2/OpenRCT2/archive/v${version}.tar.gz
+ https://github.com/OpenRCT2/objects/releases/download/v${_objects_version}/objects.zip
+ https://github.com/OpenRCT2/title-sequences/releases/download/v${_titles_version}/title-sequence-v${_titles_version}.zip"
+checksum="@f4099eb6c2f6027f8d24582707953643d0485f69c6c877afcd394149ea550557
+ 714257dcf6dc4af8761ecda1b313bfa63b3ef93ab7e46572a3e499fe4bf26e02
+ dcb1648739b351e857e2d19fed1626bec561d5e9f4b49201568f42c475ee7e61"
+skip_extraction="objects.zip title-sequence-v${_titles_version}.zip"
+
+build_options="multiplayer"
+build_options_default="multiplayer"
+desc_option_multiplayer="Enable multiplayer support"
+
+post_extract() {
+	_srcdir="${XBPS_SRCDISTDIR}/${pkgname}-${version}"
+	mkdir -p data/object data/title
+	unzip -qd data/object "${_srcdir}/objects.zip"
+	unzip -qd data/title "${_srcdir}/title-sequence-v${_titles_version}.zip"
+}
