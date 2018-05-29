@@ -1,0 +1,2 @@
+site="https://git.sr.ht/~sircmpwn/scdoc/refs/"
+pattern="<a href='/~sircmpwn/scdoc/tag/\?h=\K[\d.]+(?='>)"

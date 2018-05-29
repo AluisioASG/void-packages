@@ -1,0 +1,17 @@
+# Template file for 'scdoc'
+pkgname=scdoc
+version=1.3.3
+revision=1
+build_style=gnu-makefile
+make_build_args="CFLAGS+=-DVERSION='\"${version}\"'"
+short_desc="Tool for generating roff manual pages"
+maintainer="Aluísio Augusto Silva Gonçalves <aluisio@aasg.name>"
+license="MIT"
+homepage="https://git.sr.ht/~sircmpwn/scdoc/"
+distfiles="https://git.sr.ht/~sircmpwn/scdoc/snapshot/scdoc-${version}.tar.xz"
+checksum=@4a044d64bf879388e17b104c5646a462a54220bd356489ffb65decb56dc8feec
+
+post_install() {
+	vlicense COPYING
+	vdoc scdoc.1.scd
+}
