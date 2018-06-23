@@ -711,7 +711,7 @@ on `R`.
 Additional install arguments can be specified via `make_install_args`.
 
 - `perl-ModuleBuild` For packages that use the Perl
-[Module::Build](http://search.cpan.org/~leont/Module-Build-0.4202/lib/Module/Build.pm) method.
+[Module::Build](https://metacpan.org/pod/Module::Build) method.
 
 - `perl-module` For packages that use the Perl
 [ExtUtils::MakeMaker](http://perldoc.perl.org/ExtUtils/MakeMaker.html) build method.
@@ -1275,7 +1275,7 @@ You can now make your own commits to the `forked` repository:
 To keep your forked repository always up to date, setup the `upstream` remote
 to pull in new changes:
 
-    $ git remote add upstream git://github.com/voidlinux/void-packages.git
+    $ git remote add upstream git://github.com/void-linux/void-packages.git
     $ git pull upstream master
 
 Once you've made changes to your `forked` repository you can submit

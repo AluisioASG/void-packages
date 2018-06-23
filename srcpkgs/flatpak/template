@@ -1,6 +1,6 @@
 # Template file for 'flatpak'
 pkgname=flatpak
-version=0.11.7
+version=0.11.8.3
 revision=1
 build_style=gnu-configure
 configure_args="--disable-documentation --with-system-bubblewrap"
@@ -15,7 +15,7 @@ license="LGPL-2.1-or-later"
 homepage="https://flatpak.org/"
 #changelog="https://github.com/flatpak/flatpak/blob/master/NEWS"
 distfiles="https://github.com/flatpak/flatpak/releases/download/${version}/flatpak-${version}.tar.xz"
-checksum=1099f3115972f40940ac02af5981bc56931fba662b6875b776e45264f69104ef
+checksum=be463fb628490252aea10e7855bb4a522cc1b57856509cf50e21009067c8f3b5
 
 post_install() {
 	rm -rf $DESTDIR/usr/lib/systemd

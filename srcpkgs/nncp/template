@@ -1,6 +1,6 @@
 # Template file for 'nncp'
 pkgname=nncp
-version=3.1
+version=3.3
 revision=1
 build_style=go
 go_import_path=cypherpunks.ru/nncp
@@ -9,7 +9,7 @@ maintainer="Leah Neukirchen <leah@vuxu.org>"
 license="GPL-3.0-or-later"
 homepage="http://www.nncpgo.org/"
 distfiles="http://www.nncpgo.org/download/${pkgname}-${version}.tar.xz"
-checksum=b93445164230b58e8aaadaa2066f37f2493ccb71b025126bbcad8fad6535149f
+checksum=1f8fa9b46125d8a90608298ba1ed87e112db2d8b81c766def4dfe191c7b1bfc2
 
 do_build() {
 	make

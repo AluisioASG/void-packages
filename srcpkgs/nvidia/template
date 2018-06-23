@@ -3,7 +3,7 @@
 _desc="NVIDIA drivers for linux (long-lived series)"
 
 pkgname=nvidia
-version=390.48
+version=390.67
 revision=1
 maintainer="Juan RP <xtraeme@voidlinux.eu>"
 license="Proprietary NVIDIA license"
@@ -15,7 +15,7 @@ repository="nonfree"
 create_wrksrc=yes
 short_desc="${_desc} - Libraries and Utilities"
 depends="nvidia-gtklibs-${version}_${revision} nvidia-dkms-${version}_${revision} pkg-config"
-conflicts="catalyst>=0 xserver-abi-video>23_1"
+conflicts="catalyst>=0 xserver-abi-video>24_1"
 
 build_options="glvnd"
 desc_option_glvnd="Add support for NVIDIA's GL Vendor Neutral Dispatch implementation"
@@ -24,11 +24,11 @@ build_options_default="glvnd"
 if [ "$XBPS_TARGET_MACHINE" = "i686" ]; then
 	_pkg="NVIDIA-Linux-x86-${version}"
 	distfiles="http://uk.download.nvidia.com/XFree86/Linux-x86/${version}/${_pkg}.run"
-	checksum=5115894ebb9d5d4c75c11e73a79093b7687328ebcf85d1de81a0edf41d14d6f8
+	checksum=6f4af70ee3d03ed31c497a5d555164c56057b53ecedfc0d2c8de4b0b90728805
 else
 	_pkg="NVIDIA-Linux-x86_64-${version}-no-compat32"
 	distfiles="http://uk.download.nvidia.com/XFree86/Linux-x86_64/${version}/${_pkg}.run"
-	checksum=2d4bf72801f101a85df6fd1464021380ad51f5a30df05dadaf1fb546a175a441
+	checksum=4d9d4a636d568a93412cd9a2db08c594adef20861707dfdfbd6ae15db3292b26
 fi
 
 subpackages="nvidia-gtklibs nvidia-dkms nvidia-opencl nvidia-libs"
@@ -38,16 +38,6 @@ do_extract() {
 	cd ${wrksrc}
 	./${_pkg}.run --extract-only
 	rm -f ${_pkg}.run
-	#
-	if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
-		cp ${FILESDIR}/nvidia-x86_64-uvm8_va_block-linux_4_14_9.patch \
-			nvidia-uvm8_va_block-linux_4_14_9.patch
-		patch -p0 < nvidia-uvm8_va_block-linux_4_14_9.patch
-	fi
-	cd ${_pkg}
-	cp ${FILESDIR}/nvidia-swiotlb-linux_4_16.patch \
-		nvidia-swiotlb-linux_4_16.patch
-	patch -p0 < nvidia-swiotlb-linux_4_16.patch
 }
 
 pre_install() {
