@@ -1,6 +1,6 @@
 # Template file for 'inxi'
 pkgname=inxi
-version=3.0.15
+version=3.0.17
 revision=1
 wrksrc="inxi-${version}-1"
 noarch=yes
@@ -10,7 +10,7 @@ maintainer="Juan RP <xtraeme@voidlinux.eu>"
 license="GPL-3.0-or-later"
 homepage="https://smxi.org/docs/inxi.htm"
 distfiles="https://github.com/smxi/inxi/archive/${version}-1.tar.gz"
-checksum=2e290c34024a266b1da92968e021c229fbc8cb55b43e10a5da874c46aae7cb92
+checksum=9a04c5baa5adf2295c2a9f1f65462c38e738fa7ed9786895212a345d1d9190ca
 
 do_install() {
 	vbin inxi
