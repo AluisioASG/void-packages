@@ -1,0 +1,20 @@
+# Template file for 'atlantis'
+pkgname=atlantis
+version=0.4.5
+revision=1
+build_style=go
+go_import_path="github.com/runatlantis/atlantis"
+hostmakedepends="dep"
+depends="terraform"
+short_desc="Terraform Automation By Pull Request"
+maintainer="Michael Aldridge <maldridge@VoidLinux.eu>"
+license="Apache-2.0"
+homepage="https://runatlantis.io"
+distfiles="https://github.com/runatlantis/atlantis/archive/v$version.tar.gz"
+checksum=17d13037a26525dbafb3053c2dd2cfd37bb9da519ce36c54f2022500cb719800
+
+pre_build() {
+	cd $GOSRCPATH
+	dep ensure
+	go generate
+}
