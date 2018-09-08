@@ -1,6 +1,6 @@
 # Template file for 'libkomparediff2'
 pkgname=libkomparediff2
-version=18.04.3
+version=18.08.1
 revision=1
 build_style=cmake
 hostmakedepends="extra-cmake-modules"
@@ -10,7 +10,7 @@ maintainer="Piotr Wójcik <chocimier@tlen.pl>"
 license="GPL-2.0-or-later, LGPL-2.0-or-later"
 homepage="https://www.kde.org/"
 distfiles="${KDE_SITE}/applications/${version}/src/${pkgname}-${version}.tar.xz"
-checksum=e11a05cd551050a3a0ab423a9c05df420e2715fa33ab2450eecef2eda56249cf
+checksum=41777a633311ce8a587ea65a0d0d397dd75a0e682933325df12086d1581f9c84
 
 if [ -n "$CROSS_BUILD" ]; then
 	hostmakedepends+=" python qt5-host-tools qt5-qmake"

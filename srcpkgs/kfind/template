@@ -1,6 +1,6 @@
 # Template file for 'kfind'
 pkgname=kfind
-version=18.04.3
+version=18.08.1
 revision=1
 build_style=cmake
 hostmakedepends="extra-cmake-modules qt5-host-tools qt5-qmake python
@@ -11,4 +11,4 @@ maintainer="Piotr Wójcik <chocimier@tlen.pl>"
 license="GPL-2.0-or-later"
 homepage="https://www.kde.org/applications/utilities/kfind/"
 distfiles="${KDE_SITE}/applications/${version}/src/${pkgname}-${version}.tar.xz"
-checksum=8adc52d359d00a0da0147d0c7389861dfc985ed03fd8698e2b1e2c95ef8e0cb8
+checksum=79ea2aff98965358273dbdf2d97c8f3e2f6a7db795acae9c77de97f177638497

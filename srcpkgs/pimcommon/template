@@ -1,6 +1,6 @@
 # Template file for 'pimcommon'
 pkgname=pimcommon
-version=18.04.3
+version=18.08.1
 revision=1
 build_style=cmake
 hostmakedepends="extra-cmake-modules qt5-qmake qt5-host-tools python libxslt
@@ -13,7 +13,7 @@ maintainer="John <johnz@posteo.net>"
 license="GPL-2.0-or-later, LGPL-2.1-or-later"
 homepage="https://community.kde.org/KDE_PIM"
 distfiles="${KDE_SITE}/applications/${version}/src/pimcommon-${version}.tar.xz"
-checksum=b2c9dcd070689decb7b7e2630dfd4cd3450269c5ec05ed66abad55bfefa36f6c
+checksum=d72087c5f0316e8a372a7887673bbeb7b1d6c2e3e9533748b5c9d9b6c8190f41
 
 pimcommon-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision} ${makedepends}"

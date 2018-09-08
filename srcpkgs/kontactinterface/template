@@ -1,6 +1,6 @@
 # Template file for 'kontactinterface'
 pkgname=kontactinterface
-version=18.04.3
+version=18.08.1
 revision=1
 build_style=cmake
 hostmakedepends="extra-cmake-modules qt5-qmake qt5-host-tools python"
@@ -10,7 +10,7 @@ maintainer="John <johnz@posteo.net>"
 license="LGPL-2.1-or-later"
 homepage="Kontact Plugin Interface Library"
 distfiles="${KDE_SITE}/applications/${version}/src/kontactinterface-${version}.tar.xz"
-checksum=e667f9049a9b1790eb9f4f9d84f4496ddf8f73a1d417b66362a4ab398b078fa4
+checksum=6bee6b0dd27140f4da98fa4abff7f7187d5830bb41d5a82c7ccac659b2e726f1
 
 kontactinterface-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision} ${makedepends}"

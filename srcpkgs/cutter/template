@@ -1,7 +1,7 @@
 # Template file for 'cutter'
 pkgname=cutter
-version=1.6
-revision=3
+version=1.7.1
+revision=1
 build_style=qmake
 build_wrksrc=src
 hostmakedepends="pkg-config qt5-declarative-devel qt5-location-devel
@@ -14,4 +14,4 @@ maintainer="johannes <johannes.brechtmann@gmail.com>"
 license="GPL-3.0-only"
 homepage="https://github.com/radareorg/cutter"
 distfiles="https://github.com/radareorg/${pkgname}/archive/v${version}.tar.gz"
-checksum=7cf26f2070d28a453b487e214b1c8bd722a540e62549e0656851e3b904f0a0a9
+checksum=e9b737d75a6d5b6f27c1406ee6b09f4e570db226c3a52f2f6c5f3b8bdd4050f8

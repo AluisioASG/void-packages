@@ -1,9 +1,9 @@
 # Template file for 'geany-plugins'
 pkgname=geany-plugins
 version=1.33.0
-revision=1
+revision=2
 build_style=gnu-configure
-configure_args="--enable-all-plugins"
+configure_args="PYTHON=/usr/bin/python2 --enable-all-plugins"
 hostmakedepends="automake gettext-devel intltool libtool pkg-config vala
  glib-devel python-devel"
 makedepends="geany-devel lua51-devel ctpl-devel libwnck2-devel GConf-devel
@@ -20,7 +20,7 @@ pre_configure() {
 	NOCONFIGURE=1 ./autogen.sh
 
 	if [ "$CROSS_BUILD" ]; then
-	# Use cross prefix for python
+		# Use cross prefix for python
 		sed -e "s;-L\$ac_python_libdir;-L${XBPS_CROSS_BASE}/usr/lib;g" \
 			-e "s;PYTHON_CPPFLAGS=\$python_path;PYTHON_CPPFLAGS=-I${XBPS_CROSS_BASE}/usr/include/python2.7;g" -i configure
 	fi

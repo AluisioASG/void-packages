@@ -1,7 +1,6 @@
 # Template file for 'claws-mail'
-
 pkgname=claws-mail
-version=3.16.0
+version=3.17.1
 revision=1
 build_style=gnu-configure
 configure_args="--disable-static --disable-python-plugin --disable-perl-plugin"
@@ -12,10 +11,10 @@ makedepends="poppler-glib-devel libarchive-devel libSM-devel
  libsoup-gnome-devel startup-notification-devel"
 short_desc="The user-friendly, lightweight, and fast email client"
 maintainer="Jakub Skrzypnik <jot.skrzyp@gmail.com>"
-license="GPL-3"
+license="GPL-3.0-or-later"
 homepage="http://claws-mail.org"
 distfiles="http://www.claws-mail.org/download.php?file=releases/claws-mail-${version}.tar.xz"
-checksum=c212133d3d962129d8c7995c1c7d973faef2a8914481c0c74578217bf4c897ab
+checksum=757b5f4163fb44f772b1453d1cc0b83387bb6b67ad55cc0694bdd4eff9ea76f2
 nocross=yes
 
 # TODO(dominikh): claws-mail is a mess. If we don't have python

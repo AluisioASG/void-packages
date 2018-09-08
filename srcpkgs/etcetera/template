@@ -1,7 +1,7 @@
 # Template file for 'etcetera'
 pkgname=etcetera
-version=0.5
-revision=2
+version=0.7
+revision=1
 noarch=yes
 pycompile_dirs="/usr/lib/etcetera"
 depends="python3"
@@ -9,8 +9,8 @@ short_desc="Config file management with a touch of wisdom"
 maintainer="cr6git <quark6@protonmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://gitlab.com/jeancf/etcetera"
-distfiles="https://github.com/jeancf/etcetera/archive/v${version}.tar.gz"
-checksum=1cf1df80dabddc9207fa1c44d6d2ac26fe935e084cd6d83ea8d8a7fb4c8b972d
+distfiles="https://gitlab.com/jeancf/etcetera/-/archive/${version}/etcetera-${version}.tar.gz"
+checksum=10abd96d42d325339c5a8285332000e6c68534d7e647a74e31658d74b7372190
 conf_files="/etc/etcetera.conf"
 
 do_install() {

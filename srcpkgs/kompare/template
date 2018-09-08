@@ -1,6 +1,6 @@
 # Template file for 'kompare'
 pkgname=kompare
-version=18.04.3
+version=18.08.1
 revision=1
 build_style=cmake
 hostmakedepends="extra-cmake-modules"
@@ -8,9 +8,9 @@ makedepends="ktexteditor-devel libkomparediff2-devel"
 short_desc="File difference viewer"
 maintainer="Norbert Vegh <vegh@norvegh.com>"
 license="GPL-2.0-only, GFDL-1.2-only"
-homepage="http://www.caffeinated.me.uk/kompare/"
+homepage="https://www.kde.org/applications/development/kompare/"
 distfiles="${KDE_SITE}/applications/${version}/src/${pkgname}-${version}.tar.xz"
-checksum=dbd8ba4abc7026f1154e7c263159e2c6ce7426603dfe2ce720091e16b58552b3
+checksum=1b6706700ec7216f6674544716a33c63fe3b4a5411a28732c0300f6558714d4f
 
 if [ -n "$CROSS_BUILD" ]; then
 	hostmakedepends+=" kdoctools python qt5-host-tools qt5-qmake"
