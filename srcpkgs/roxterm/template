@@ -1,6 +1,6 @@
 # Template file for 'roxterm'
 pkgname=roxterm
-version=3.6.1
+version=3.7.1
 revision=1
 build_style=cmake
 hostmakedepends="ImageMagick itstool librsvg-utils libtool pkg-config po4a xmlto"
@@ -11,4 +11,8 @@ maintainer="Juan RP <xtraeme@voidlinux.eu>"
 license="GPL-2.0-or-later, LGPL-3.0-only"
 homepage="https://github.com/realh/roxterm"
 distfiles="https://github.com/realh/roxterm/archive/${version}.tar.gz"
-checksum=29f42371194a2aa031a0a7d607cbb8e63e3c50f984e3e81590692c61978d593f
+checksum=cab9ac94c2ccf02f0804057fea7cd296309a1033b7e18fbf131c6580746ff0e2
+
+pre_configure() {
+	echo -n ${version} > version
+}

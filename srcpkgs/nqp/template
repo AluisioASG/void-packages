@@ -1,8 +1,9 @@
 # Template file for 'nqp'
 pkgname=nqp
-version=2018.06
+version=2018.09
 revision=1
 build_style=configure
+make_check_target=test
 configure_script="perl Configure.pl"
 configure_args="--prefix=/usr --backends=moar"
 hostmakedepends="perl"
@@ -12,7 +13,6 @@ short_desc="Not Quite Perl, a lightweight Perl 6-like environment for VMs"
 maintainer="Ruslan <axetwe@gmail.com>"
 license="Artistic-2.0"
 homepage="https://github.com/perl6/nqp"
-distfiles="https://github.com/perl6/nqp/archive/${version}.tar.gz"
-checksum=f2c50bef725eddd232f6080c3bb78c6c60751b22300eb6fbfe71a15876f8c4f5
+distfiles="https://rakudo.perl6.org/downloads/$pkgname/$pkgname-$version.tar.gz"
+checksum=8effea7b14a52a4c09a000bf6cde4cbf13385246af9b31a5da4dab27361ca905
 nocross=yes
-make_check_target=test

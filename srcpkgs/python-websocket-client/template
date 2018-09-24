@@ -1,19 +1,19 @@
 # Template file for 'python-websocket-client'
 pkgname=python-websocket-client
-version=0.51.0
+version=0.53.0
 revision=1
 noarch=yes
 wrksrc="websocket_client-${version}"
 build_style=python-module
+pycompile_module="websocket"
 hostmakedepends="python-setuptools python3-setuptools"
 depends="python-six ca-certificates"
-pycompile_module="websocket"
 short_desc="WebSocket client for Python2"
 maintainer="Sergi Alvarez <pancake@nopcode.org>"
 license="LGPL-2.1-or-later"
 homepage="https://github.com/websocket-client/websocket-client"
 distfiles="${PYPI_SITE}/w/websocket-client/websocket_client-${version}.tar.gz"
-checksum=030bbfbf29ac9e315ffb207ed5ed42b6981b5038ea00d1e13b02b872cc95e8f6
+checksum=c42b71b68f9ef151433d6dcc6a7cb98ac72d2ad1e3a74981ca22bc5d9134f166
 alternatives="websocket-client:wsdump:/usr/bin/wsdump.py2"
 
 pre_build() {
