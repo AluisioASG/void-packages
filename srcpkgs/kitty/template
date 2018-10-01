@@ -1,7 +1,7 @@
 # Template file for 'kitty'
 pkgname=kitty
-version=0.12.1
-revision=2
+version=0.12.3
+revision=1
 pycompile_version="$py3_ver"
 pycompile_dirs="usr/lib/kitty"
 hostmakedepends="ncurses pkg-config python3 wayland-devel wayland-protocols"
@@ -12,11 +12,12 @@ short_desc="Modern, hackable, featureful, OpenGL based terminal emulator"
 maintainer="Benjamin Slade <slade@jnanam.net>"
 license="GPL-3.0-or-later"
 homepage="https://sw.kovidgoyal.net/kitty/"
+changelog="https://sw.kovidgoyal.net/kitty/changelog.html"
 distfiles="https://github.com/kovidgoyal/kitty/releases/download/v${version}/kitty-${version}.tar.xz"
-checksum=ed5c18fe388e2bf569497443935eb60b0dbe971094e94fa3b0f4c442055c7915
+checksum=60d8cc0bb9b3a83756916985ee41776d6b02ab4262c1e7b4546a451632b48298
 
 do_build() {
-	if [ -n "$CROSS_BUILD" ]; then
+	if [ "$CROSS_BUILD" ]; then
 		export CFLAGS="-I${XBPS_CROSS_BASE}/${py3_inc}"
 		sed -i "s|-fpie|-fpie ${CFLAGS}|g" setup.py
 	fi
