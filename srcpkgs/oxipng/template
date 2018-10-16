@@ -1,22 +1,17 @@
 # Template file for 'oxipng'
 pkgname=oxipng
-version=2.1.4
-revision=1
-hostmakedepends="cargo"
+version=2.1.5
+revision=2
+build_style=cargo
 short_desc="Multithreaded lossless PNG compression optimizer"
 maintainer="cr6git <quark6@protonmail.com>"
 license="MIT"
 homepage="https://github.com/shssoichiro/oxipng"
 changelog="https://raw.githubusercontent.com/shssoichiro/oxipng/master/CHANGELOG.md"
 distfiles="https://github.com/shssoichiro/oxipng/archive/v${version}.tar.gz"
-checksum=157d8039a3e0cbc29824888c3b9c2651789a4a9dd4c203c735150d3deeba266d
-nocross=yes
+checksum=5f050a5c3ba4be302dfc88d14564e2402b7d0927372ab2b1ae2a72bdbf51dba6
+nocross="Needs newer/unstable rust: error[E0658]: macro is_arm_feature_detected! is unstable"
 
-do_build() {
-	cargo build --release ${makejobs}
-}
-
-do_install() {
-	vbin target/release/oxipng
+post_install() {
 	vlicense LICENSE
 }

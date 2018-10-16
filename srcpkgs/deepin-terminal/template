@@ -1,6 +1,6 @@
 # Template file for 'deepin-terminal'
 pkgname=deepin-terminal
-version=3.0.5
+version=3.0.8
 revision=1
 build_style=cmake
 configure_args="-DTEST_BUILD=OFF"
@@ -15,7 +15,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/linuxdeepin/deepin-terminal"
 changelog="https://github.com/linuxdeepin/deepin-terminal/blob/master/CHANGELOG.md"
 distfiles="https://github.com/linuxdeepin/deepin-terminal/archive/${version}.tar.gz"
-checksum=088dad3d4243e607c26d8125b4136230d5b1d93407c8e0ad9c19330f61dfbc46
+checksum=11602b2f5feef9332ee873e76a847ec0f6025a4c92f6b410720f71ee4fe0955d
 nocross=yes
 
 case $XBPS_TARGET_MACHINE in
