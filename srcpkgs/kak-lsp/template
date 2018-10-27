@@ -1,6 +1,6 @@
 # Template file for 'kak-lsp'
 pkgname=kak-lsp
-version=5.6.0
+version=5.8.2
 revision=1
 build_style=cargo
 short_desc="Language Server Protocol client for Kakoune"
@@ -8,8 +8,9 @@ maintainer="Emerson Ferreira <me@skrps.me>"
 license="Unlicense"
 homepage="https://github.com/ul/kak-lsp"
 distfiles="${homepage}/archive/v${version}.tar.gz"
-checksum=3107ff48fb3fdb7d1bd18f6dab02b76060e008534801cd83691e08f0e5514454
+checksum=60eb87948c4c662106e46306321a55ead0065f9875f07542e1c0bfbdab3d555b
 
 post_install() {
 	vlicense UNLICENSE
+	vsconf kak-lsp.toml
 }
