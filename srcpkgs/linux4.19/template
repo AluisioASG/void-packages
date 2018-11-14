@@ -2,6 +2,8 @@
 pkgname=linux4.19
 version=4.19.2
 revision=1
+_variant=custom
+_localversion="-ck1-${_variant}"
 patch_args="-Np1"
 wrksrc="linux-${version}"
 short_desc="The Linux kernel and modules (${version%.*} series)"
@@ -20,7 +22,7 @@ preserve=yes
 only_for_archs="i686 i686-musl x86_64 x86_64-musl armv5tel armv5tel-musl armv6l armv6l-musl armv7l armv7l-musl aarch64 aarch64-musl"
 hostmakedepends="bc elfutils-devel flex gmp-devel kmod libmpc-devel libressl-devel perl uboot-mkimage"
 
-_kernver="${version}_${revision}"
+_kernver="${version}${_localversion}_${revision}"
 triggers="kernel-hooks"
 kernel_hooks_version="${_kernver}"
 
@@ -56,9 +58,9 @@ do_configure() {
 		_args="CROSS_COMPILE=${XBPS_CROSS_TRIPLET}-"
 	fi
 
-	if [ -f ${FILESDIR}/${arch}-dotconfig-custom ]; then
+	if [ -f ${FILESDIR}/${arch}-dotconfig-${_variant} ]; then
 		msg_normal "Detected a custom .config file for your arch, using it.\n"
-		cp -f ${FILESDIR}/${arch}-dotconfig-custom .config
+		cp -f ${FILESDIR}/${arch}-dotconfig-${_variant} .config
 		make ${makejobs} ARCH=$arch ${_args} oldconfig
 	elif [ -f ${FILESDIR}/${arch}-dotconfig ]; then
 		msg_normal "Detected a .config file for your arch, using it.\n"
@@ -74,7 +76,7 @@ do_configure() {
 		make ${makejobs} ARCH=$arch ${_args} allmodconfig
 	fi
 	# Always use our revision to CONFIG_LOCALVERSION to match our pkg version.
-	sed -i -e "s|^\(CONFIG_LOCALVERSION=\).*|\1\"_${revision}\"|" .config
+	sed -i -e 's|^CONFIG_LOCALVERSION="\(.*\)"|CONFIG_LOCALVERSION="\1_'${revision}'"|' .config
 }
 do_build() {
 	local arch _cross _args
@@ -88,12 +90,12 @@ do_build() {
 	if [ "$CROSS_BUILD" ]; then
 		_cross="CROSS_COMPILE=${XBPS_CROSS_TRIPLET}-"
 	fi
-	if [ "${_patchver}" ]; then
-		_version="EXTRAVERSION=${_patchver}"
-	fi
 	export LDFLAGS=
-	make ARCH=$arch ${_version} ${_cross} ${makejobs} prepare
-	make ARCH=$arch ${_version} ${_cross} ${makejobs} ${_args}
+	make ARCH=$arch ${_cross} ${makejobs} prepare
+	make ARCH=$arch ${_cross} ${makejobs} ${_args}
+
+	# Remove temporary build files to avoid out-of-disk-space errors later on.
+	rm -rf .tmp_*
 }
 do_install() {
 	local arch subarch _args hdrdest
@@ -207,16 +209,6 @@ do_install() {
 	# Add wireless headers
 	mkdir -p ${hdrdest}/net/mac80211/
 	cp net/mac80211/*.h ${hdrdest}/net/mac80211
-
-	# add dvb headers for external modules
-	mkdir -p ${hdrdest}/include/config/dvb/
-	cp include/config/dvb/*.h ${hdrdest}/include/config/dvb/
-
-	# add dvb headers for http://mcentral.de/hg/~mrec/em28xx-new
-	mkdir -p ${hdrdest}/drivers/media/dvb-frontends
-	cp drivers/media/dvb-frontends/lgdt330x.h \
-		${hdrdest}/drivers/media/dvb-frontends/
-	cp drivers/media/i2c/msp3400-driver.h ${hdrdest}/drivers/media/i2c/
 
 	# add dvb headers
 	mkdir -p ${hdrdest}/drivers/media/usb/dvb-usb
