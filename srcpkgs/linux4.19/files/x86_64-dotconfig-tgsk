@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 4.19.2-ck1 Kernel Configuration
+# Linux/x86 4.19.4-ck1 Kernel Configuration
 #
 
 #
@@ -757,8 +757,9 @@ CONFIG_HAVE_ARCH_PREL32_RELOCATIONS=y
 # GCOV-based kernel profiling
 #
 CONFIG_ARCH_HAS_GCOV_PROFILE_ALL=y
-CONFIG_PLUGIN_HOSTCC=""
+CONFIG_PLUGIN_HOSTCC="g++"
 CONFIG_HAVE_GCC_PLUGINS=y
+# CONFIG_GCC_PLUGINS is not set
 CONFIG_RT_MUTEXES=y
 CONFIG_BASE_SMALL=0
 CONFIG_MODULES=y
