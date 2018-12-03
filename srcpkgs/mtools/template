@@ -1,16 +1,16 @@
 # Template file for 'mtools'
 pkgname=mtools
-version=4.0.20
+version=4.0.22
 revision=1
 build_style=gnu-configure
 makedepends="acl-devel"
-conf_files="/etc/mtools.conf"
 short_desc="A collection of utilities to access MS-DOS disks"
 maintainer="Juan RP <xtraeme@voidlinux.eu>"
 license="GPL-3.0-or-later"
 homepage="http://www.gnu.org/software/mtools"
 distfiles="${GNU_SITE}/${pkgname}/${pkgname}-${version}.tar.bz2"
-checksum=6061d31c9f65274cf6de3264907028c90badd8b7f22dd1b385617fa353868aed
+checksum=652c0f22004b00e62a432d0aa7d6af51ef2c91a4b7168a9e2fa693aa928f5023
+conf_files="/etc/mtools.conf"
 
 post_install() {
 	vconf mtools.conf

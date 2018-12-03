@@ -1,6 +1,6 @@
 # Template file for 'oxygen'
 pkgname=oxygen
-version=5.13.5
+version=5.14.4
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF"
@@ -12,4 +12,4 @@ maintainer="Denis Revin <denis.revin@gmail.com>"
 license="LGPL-2.1-or-later, GPL-2.0-or-later"
 homepage="https://projects.kde.org/projects/plasma/oxygen"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=cd1f5539a31a0eae0c43eb5612fa5c13eca605ad023dd437a6603d009fada272
+checksum=1f4c1e7c94204af3d146670df4a6a271b433b23b4543b6ad5adcfb9aad8ebde5
