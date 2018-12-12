@@ -2,8 +2,7 @@
 pkgname=linux4.19
 version=4.19.8
 revision=1
-_variant=custom
-_localversion="-ck1-${_variant}"
+_variant=wlml
 patch_args="-Np1"
 wrksrc="linux-${version}"
 short_desc="The Linux kernel and modules (${version%.*} series)"
@@ -22,7 +21,8 @@ preserve=yes
 only_for_archs="i686 i686-musl x86_64 x86_64-musl armv5tel armv5tel-musl armv6l armv6l-musl armv7l armv7l-musl aarch64 aarch64-musl"
 hostmakedepends="bc elfutils-devel flex gmp-devel kmod libmpc-devel libressl-devel perl uboot-mkimage"
 
-_kernver="${version}${_localversion}_${revision}"
+_localversion="${_variant:++}${_variant:-_}${revision}"
+_kernver="${version}-ck1${_localversion}"
 triggers="kernel-hooks"
 kernel_hooks_version="${_kernver}"
 
@@ -76,7 +76,7 @@ do_configure() {
 		make ${makejobs} ARCH=$arch ${_args} allmodconfig
 	fi
 	# Always use our revision to CONFIG_LOCALVERSION to match our pkg version.
-	sed -i -e 's|^CONFIG_LOCALVERSION="\(.*\)"|CONFIG_LOCALVERSION="\1_'${revision}'"|' .config
+	sed -i -e 's|^CONFIG_LOCALVERSION="\(.*\)"|CONFIG_LOCALVERSION="'"${_localversion}"'"|' .config
 }
 do_build() {
 	local arch _cross _args
@@ -90,9 +90,12 @@ do_build() {
 	if [ "$CROSS_BUILD" ]; then
 		_cross="CROSS_COMPILE=${XBPS_CROSS_TRIPLET}-"
 	fi
+	if [ "${_patchver}" ]; then
+		_version="EXTRAVERSION=${_patchver}"
+	fi
 	export LDFLAGS=
-	make ARCH=$arch ${_cross} ${makejobs} prepare
-	make ARCH=$arch ${_cross} ${makejobs} ${_args}
+	make ARCH=$arch ${_version} ${_cross} ${makejobs} prepare
+	make ARCH=$arch ${_version} ${_cross} ${makejobs} ${_args}
 
 	# Remove temporary build files to avoid out-of-disk-space errors later on.
 	rm -rf .tmp_*
