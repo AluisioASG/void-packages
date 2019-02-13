@@ -1,6 +1,6 @@
 # Template file for 'kwindowsystem'
 pkgname=kwindowsystem
-version=5.53.0
+version=5.55.0
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF"
@@ -11,7 +11,7 @@ maintainer="John <johnz@posteo.net>"
 license="LGPL-2.1-or-later"
 homepage="https://projects.kde.org/projects/frameworks/kwindowsystem"
 distfiles="${KDE_SITE}/frameworks/${version%.*}/${pkgname}-${version}.tar.xz"
-checksum=9fb2009a1915167e243d4182a5cf8932bfe416b31a2f13f06256f3e1eb5809fd
+checksum=a698ddf3caeb890314b3b768a15b4cc35dd9e10356af4cf9faa89c8640eded83
 
 kwindowsystem-devel_package() {
 	short_desc+=" - development"

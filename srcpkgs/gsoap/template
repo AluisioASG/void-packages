@@ -1,6 +1,6 @@
 # Template file for 'gsoap'
 pkgname=gsoap
-version=2.8.73
+version=2.8.79
 revision=1
 wrksrc="gsoap-${version%.*}"
 build_style=gnu-configure
@@ -8,11 +8,11 @@ configure_args="--enable-ipv6"
 hostmakedepends="unzip flex autoconf"
 makedepends="libressl-devel zlib-devel"
 short_desc="Toolkit for SOAP and REST Web Services and XML-Based Applications"
-maintainer="Enno Boland <gottox@voidlinux.eu>"
+maintainer="Enno Boland <gottox@voidlinux.org>"
 license="gSOAP-1.3b, GPL-2.0-only"
 homepage="http://www.cs.fsu.edu/~engelen/soap.html"
 distfiles="${SOURCEFORGE_SITE}/gsoap2/gsoap_${version}.zip"
-checksum=55e9b20224eb1035fe330929c32562e3513b24c85253fb82b254e877e83a9f6c
+checksum=a1c36371598177950829f78c697768bc0227fe851e4172f8bfbee1e37c939cc1
 disable_parallel_build=yes
 
 if [ "$CROSS_BUILD" ]; then

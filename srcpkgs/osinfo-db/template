@@ -1,15 +1,15 @@
 # Template file for 'osinfo-db'
 pkgname=osinfo-db
-version=20181203
+version=20190120
 revision=1
 create_wrksrc=yes
 hostmakedepends="osinfo-db-tools"
 short_desc="Osinfo database about operating systems"
-maintainer="Orphaned <orphan@voidlinux.eu>"
+maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later"
 homepage="https://libosinfo.org"
 distfiles="https://releases.pagure.org/libosinfo/${pkgname}-${version}.tar.xz"
-checksum=0217c33a1ba9e134bf0e6e6b636f73bd9f7f221132b743438a765c0c875c35f2
+checksum=c14c891b6f1a9075506cb72eabdab0358aafaf5deb41e5ee09deb1481fa8612e
 skip_extraction="${pkgname}-${version}.tar.xz"
 
 do_install() {

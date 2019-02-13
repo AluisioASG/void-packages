@@ -1,6 +1,6 @@
 # Template file for 'io.elementary.icons'
 pkgname=io.elementary.icons
-version=5.0.1
+version=5.0.3
 revision=1
 wrksrc="icons-${version}"
 build_style=meson
@@ -9,7 +9,7 @@ maintainer="Cameron Nemo <camerontnorman@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/elementary/icons"
 distfiles="${homepage}/archive/${version}.tar.gz"
-checksum=2bebc52dd62075e29422dac3f3d4ed40abf3cb24823d43f8ef679fd45593cf51
+checksum=51ea67854f70990227576137498f8145468c4cf98c54417d4415bf702517d10a
 
 post_install() {
 	# How did that get there?

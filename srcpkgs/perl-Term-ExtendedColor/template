@@ -1,6 +1,6 @@
 # Template file for 'perl-Term-ExtendedColor'
 pkgname=perl-Term-ExtendedColor
-version=0.226
+version=0.239
 revision=1
 noarch=yes
 wrksrc="Term-ExtendedColor-${version}"
@@ -9,8 +9,8 @@ hostmakedepends="perl"
 makedepends="$hostmakedepends"
 depends="$hostmakedepends"
 short_desc="Color screen output using 256 colors"
-maintainer='Juan RP <xtraeme@voidlinux.eu>'
+maintainer='Juan RP <xtraeme@voidlinux.org>'
 license="Artistic-1.0-Perl, GPL-1.0-or-later"
 homepage="https://metacpan.org/release/Term-ExtendedColor"
 distfiles="${CPAN_SITE}/Term/Term-ExtendedColor-${version}.tar.gz"
-checksum=a1da5d0441799705aa77b51ad686ea70c423e4b3aafe786fc9ee7cdb24856a97
+checksum=b83ebdef1f9ef3bc93aa2b7220d4fdba9af2e6894949e84a3f6dcd31c5655861

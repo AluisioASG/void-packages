@@ -1,13 +1,13 @@
 # Template file for 'libasr'
 pkgname=libasr
 version=1.0.2
-revision=3
+revision=4
 wrksrc="${pkgname}-${pkgname}-${version}"
 build_style=gnu-configure
 hostmakedepends="automake libtool"
 makedepends="libressl-devel"
 short_desc="Simple and portable asynchronous resolver library"
-maintainer="Juan RP <xtraeme@voidlinux.eu>"
+maintainer="Juan RP <xtraeme@voidlinux.org>"
 license="BSD-2-Clause"
 homepage="https://www.opensmtpd.org/"
 distfiles="https://github.com/OpenSMTPD/${pkgname}/archive/${pkgname}-${version}.tar.gz"

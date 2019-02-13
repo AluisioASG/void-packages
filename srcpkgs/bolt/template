@@ -1,9 +1,10 @@
 # Template file for 'bolt'
 pkgname=bolt
-version=0.5
+version=0.7
 revision=1
 build_style=meson
 configure_args="-Dman=true -Dsystemd=false"
+make_dirs="/var/lib/boltd 0755 root root"
 hostmakedepends="asciidoc glib-devel pkg-config"
 makedepends="eudev-libudev-devel libglib-devel polkit-devel"
 checkdepends="dbus"
@@ -12,8 +13,8 @@ maintainer="Rasmus Thomsen <rasmus.thomsen@protonmail.com>"
 license="LGPL-2.1-or-later"
 homepage="https://gitlab.freedesktop.org/bolt/bolt"
 distfiles="https://gitlab.freedesktop.org/bolt/bolt/-/archive/${version}/bolt-${version}.tar.gz"
-checksum=f0ed0a6f50fd3a741fbe2b51290daf1cd4c9d4859941df832c5c1f681a418631
-make_dirs="/var/lib/boltd 0755 root root"
+checksum=46edbd2265a565625d8d236cc33c2c75125925a44960993d254453ae3ff09262
+patch_args="-Np1"
 
 post_install() {
 	vsv boltd

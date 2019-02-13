@@ -1,6 +1,6 @@
 # Template file for 'spectacle'
 pkgname=spectacle
-version=18.08.3
+version=18.12.1
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF"
@@ -12,4 +12,4 @@ maintainer="Denis Revin <denis.revin@gmail.com>"
 license="LGPL-2.0-or-later, GPL-2.0-or-later"
 homepage="https://projects.kde.org/projects/kde/kdegraphics/spectacle"
 distfiles="${KDE_SITE}/applications/${version}/src/${pkgname}-${version}.tar.xz"
-checksum=e9f7d09e2b1eb4d8d919a57b461e37e3f5b8d0ef152206e55deef28af2aa7946
+checksum=a9d1637946956034f3a76d237092f661ffa8eba5abc606fab9e1d210f95531e5

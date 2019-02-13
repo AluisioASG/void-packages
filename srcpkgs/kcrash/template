@@ -1,6 +1,6 @@
 # Template file for 'kcrash'
 pkgname=kcrash
-version=5.53.0
+version=5.55.0
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF"
@@ -11,7 +11,7 @@ maintainer="John <johnz@posteo.net>"
 license="LGPL-2.0-or-later"
 homepage="https://projects.kde.org/projects/frameworks/kcrash"
 distfiles="${KDE_SITE}/frameworks/${version%.*}/${pkgname}-${version}.tar.xz"
-checksum=8b56adfb36b349619b8b2cd5af5f8633c18a48664a76f1b82fed243ac3b1ceda
+checksum=c90d96fbac26727e1de32898a93bb7cbc9a05ee992c11d4303941ab96a614821
 
 if [ "$CROSS_BUILD" ]; then
 	hostmakedepends+=" qt5-host-tools kwindowsystem-devel"

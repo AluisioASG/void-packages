@@ -1,6 +1,6 @@
 # Template file for 'neovim-remote'
 pkgname=neovim-remote
-version=2.1.1
+version=2.1.4
 revision=1
 noarch=yes
 build_style=python3-module
@@ -13,7 +13,7 @@ maintainer="dleeram <dleeram@protonmail.com>"
 license="MIT"
 homepage="https://github.com/mhinz/neovim-remote"
 distfiles="${homepage}/archive/v${version}.tar.gz"
-checksum=fb7a6791d71e451b6b5bcacecd984f890e11cecbd890f40d03934e35a1f4d492
+checksum=526312f0d8ed78863395ff12610816bec48bede4ef461e9c18a387d371c7bcdd
 
 do_check() {
 	python3 -m pytest

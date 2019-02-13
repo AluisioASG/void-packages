@@ -1,6 +1,6 @@
 # Template file for 'kconfigwidgets'
 pkgname=kconfigwidgets
-version=5.53.0
+version=5.55.0
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF"
@@ -11,7 +11,7 @@ maintainer="John <johnz@posteo.net>"
 license="LGPL-2.0-or-later"
 homepage="https://projects.kde.org/projects/frameworks/kconfigwidgets"
 distfiles="${KDE_SITE}/frameworks/${version%.*}/${pkgname}-${version}.tar.xz"
-checksum=7b0a87f74462adf9738a41599c63f8fb044a5f955420c74a71274ee582a4fe2e
+checksum=b3acbce98798eb5fe897fae671b898697b5ffdd2e357aa8d4750305abeb9ee5a
 
 kconfigwidgets-devel_package() {
 	short_desc+=" - development"

@@ -1,6 +1,6 @@
 # Template file for 'python-alembic'
 pkgname=python-alembic
-version=1.0.5
+version=1.0.7
 revision=1
 noarch=yes
 wrksrc="alembic-${version}"
@@ -13,7 +13,7 @@ maintainer="Piotr Wójcik <chocimier@tlen.pl>"
 license="MIT"
 homepage="https://bitbucket.org/zzzeek/alembic"
 distfiles="${PYPI_SITE}/a/alembic/alembic-${version}.tar.gz"
-checksum=e9ffdece0eece55f4108b14b6b0f29ffc730d58e28446a434fe41a1cc5c5f266
+checksum=16505782b229007ae905ef9e0ae6e880fddafa406f086ac7d442c1aaf712f8c2
 
 post_install() {
 	vlicense LICENSE

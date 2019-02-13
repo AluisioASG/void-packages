@@ -1,6 +1,6 @@
 # Template file for 'cinnamon'
 pkgname=cinnamon
-version=4.0.6
+version=4.0.9
 revision=1
 wrksrc="Cinnamon-${version}"
 build_style=gnu-configure
@@ -13,8 +13,7 @@ makedepends="cjs-devel clutter-gtk-devel cinnamon-menus-devel gstreamer1-devel
  startup-notification-devel pulseaudio-devel dbus-glib-devel GConf-devel
  libgnome-keyring-devel NetworkManager-devel libcroco-devel libsoup-devel
  cinnamon-desktop-devel"
-depends="
- accountsservice caribou cinnamon-settings-daemon>=${version%.*}
+depends=" accountsservice caribou cinnamon-settings-daemon>=${version%.*}
  cinnamon-session>=${version%.*} muffin>=${version%.*}
  cinnamon-control-center>=${version%.*} cinnamon-screensaver>=${version%.*}
  cinnamon-translations>=${version%.*} nemo>=${version%.*}
@@ -22,12 +21,12 @@ depends="
  network-manager-applet polkit-gnome upower>=0.99.7 libkeybinder3 python3-dbus
  python3-gobject python3-pam python3-pexpect python3-Pillow python3-inotify"
 short_desc="GNOME3 fork of Linux Mint with GNOME2 aspect"
-maintainer="Juan RP <xtraeme@voidlinux.eu>"
+maintainer="Juan RP <xtraeme@voidlinux.org>"
 license="GPL-2.0-or-later, LGPL-2.0-or-later"
 homepage="http://developer.linuxmint.com/projects/cinnamon-projects.html/"
 changelog="https://raw.githubusercontent.com/linuxmint/Cinnamon/${version}/debian/changelog"
 distfiles="https://github.com/linuxmint/${pkgname}/archive/${version}.tar.gz"
-checksum=f0b5d203c563abcd8fd7e705797a3f9d4d726104809e46a715aca3a58271b2b7
+checksum=097a9a77559bacf434c26fa9feb8f7391f8f56c947e80ef4f8649aa708061b8d
 nocross="gobject-introspection"
 
 pycompile_version="$py3_ver"

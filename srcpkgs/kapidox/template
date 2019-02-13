@@ -1,6 +1,6 @@
 # Template file for 'kapidox'
 pkgname=kapidox
-version=5.53.0
+version=5.55.0
 revision=1
 noarch=yes
 build_style=cmake
@@ -13,7 +13,7 @@ maintainer="John <johnz@posteo.net>"
 license="BSD-2-Clause"
 homepage="https://projects.kde.org/projects/frameworks/kapidox"
 distfiles="${KDE_SITE}/frameworks/${version%.*}/${pkgname}-${version}.tar.xz"
-checksum=8a25d63d23bd3424793edcc8189c4889e882c0393c394c338bd460a60bc5daea
+checksum=4eaa61e64d9ca9692ec94db23e0257259666a06fce9dc2a43579db3c6e538174
 
 post_install() {
 	vlicense LICENSE

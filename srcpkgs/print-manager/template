@@ -1,6 +1,6 @@
 # Template file for 'print-manager'
 pkgname=print-manager
-version=18.08.3
+version=18.12.1
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF"
@@ -12,7 +12,7 @@ maintainer="Giuseppe Fierro <gspe@ae-design.ws>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/KDE/print-manager"
 distfiles="${KDE_SITE}/applications/${version}/src/${pkgname}-${version}.tar.xz"
-checksum=cfc579915e1b629b3f547fb5c65e31e0ad8b0540241b4d033acb80e908f28f55
+checksum=b9c39b1ea916e83c66a666f7ee94dc19286f9977a1b9da15c7398bf8442a7306
 
 if [ "$CROSS_BUILD" ]; then
 	configure_args+=" -DKF5_HOST_TOOLING=/usr/lib/cmake"

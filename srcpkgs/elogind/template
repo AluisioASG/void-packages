@@ -1,7 +1,7 @@
 # Template file for 'elogind'
 pkgname=elogind
 version=239.3
-revision=1
+revision=2
 build_style=meson
 configure_args="-Dcgroup-controller=elogind -Dhalt-path=/usr/bin/halt
  -Drootlibexecdir=/usr/libexec/elogind -Dreboot-path=/usr/bin/reboot
@@ -12,7 +12,7 @@ makedepends="acl-devel eudev-libudev-devel gettext-devel glib-devel libcap-devel
  libseccomp-devel pam-devel"
 depends="dbus"
 short_desc="Standalone logind fork"
-maintainer="Enno Boland <gottox@voidlinux.eu>"
+maintainer="Enno Boland <gottox@voidlinux.org>"
 license="GPL-2.0-or-later, LGPL-2.0-or-later"
 homepage="https://github.com/elogind/elogind"
 distfiles="https://github.com/${pkgname}/${pkgname}/archive/v${version}.tar.gz"
@@ -45,6 +45,7 @@ post_install() {
 	vinstall ./src/systemd/_sd-common.h 644 usr/include
 	vinstall $FILESDIR/elogind.wrapper 755 usr/libexec/elogind
 	vmkdir usr/lib/dracut/dracut.conf.d
+	vsed -e 's/#KillUserProcesses=.*/KillUserProcesses=no/' -i ${DESTDIR}/etc/elogind/logind.conf
 	echo "install_items+=\" /usr/libexec/elogind/elogind-uaccess-command \"" >> ${DESTDIR}/usr/lib/dracut/dracut.conf.d/elogind.conf
 }
 

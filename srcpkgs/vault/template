@@ -1,6 +1,6 @@
 # Template file for 'vault'
 pkgname=vault
-version=1.0.0
+version=1.0.2
 revision=1
 build_style=go
 go_import_path="github.com/hashicorp/${pkgname}"
@@ -11,7 +11,7 @@ maintainer="iaroki <iaroki@protonmail.com>"
 license="MPL-2.0"
 homepage="https://www.vaultproject.io/"
 distfiles="https://github.com/hashicorp/${pkgname}/archive/v${version}.tar.gz"
-checksum=5f7edef332b622d6b9897bf252e27251178e7f0f4745cfb27e2179e72d5a769b
+checksum=4896d48e7f0d9a9a8229eb13a38bbf84b461641545427c449b326b791a820a0e
 system_accounts="_vault"
 
 post_install() {

@@ -1,6 +1,6 @@
 # Template file for 'Waybar'
 pkgname=Waybar
-version=0.2.2
+version=0.3.0
 revision=1
 build_style=meson
 configure_args="-Dlibnl=$(vopt_if libnl enabled disabled)
@@ -17,7 +17,7 @@ license="MIT"
 homepage="https://github.com/Alexays/Waybar"
 changelog="https://github.com/Alexays/Waybar/releases"
 distfiles="https://github.com/Alexays/Waybar/archive/${version}.tar.gz"
-checksum=14d9331c5c444970d7ceac3e24992b1b1c17942704fed58cd5ced2773c11cf79
+checksum=5813da72a86f3641157ae026f7b5be2945c8130cac7f4492232c0cade35193d8
 
 build_options="libnl pulseaudio dbusmenugtk"
 build_options_default="pulseaudio"
